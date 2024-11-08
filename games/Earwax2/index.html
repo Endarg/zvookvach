@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lt IE 7]> <html class="lt-ie10 lt-ie9 lt-ie8 lt-ie7" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie10 lt-ie9 lt-ie8" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie10 lt-ie9" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if IE 9]>    <html class="lt-ie10" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Earwax" />
+    <meta name="keywords" content="Earwax" />
+    
+    <title>Earwax by Jackbox Games</title>
+    
+    <script type="text/javascript">
+          function onLoad() {
+            JVG.api = new JVG.GameApi( "", "" );
+            
+            var flashvars = {};
+            
+            var params = {};
+            params.wmode             = "direct";
+            params.scale             = "default";
+            params.menu              = "false";
+            params.quality           = "high";
+            params.bgcolor           = "#000000";
+            params.allowscriptaccess = "always";
+            params.allowfullscreen   = "true";
+            
+            var swfVersionStr = "12.0.0";
+            var playerVersion = swfobject.getFlashPlayerVersion();
+            var xiSwfUrlStr = "playerProductInstall.swf";
+            
+            var attributes = {};
+            attributes.id    = "Earwax";
+            attributes.name  = "Earwax";
+            attributes.align = "middle";
+            
+            swfobject.embedSWF(
+              "Earwax.swf",
+              "flashContent",
+              1280,
+              720,
+              swfVersionStr,
+              xiSwfUrlStr,
+              flashvars,
+              params,
+              attributes,
+              JVG.api.handleSwfLoaded
+            );
+          }
+          
+          function connectToService( config ) {
+            JVG.blobClient = new BlobCastClient(config);
+            JVG.blobClient.delegate = new JVG.FlashBlobHandler();
+            JVG.blobClient.connectToService(null, JVG.blobClient.delegate.onConnectedToService, JVG.blobClient.delegate.onDisconnectedFromService);
+          }
+          
+          function disconnectFromService() {
+            if ( JVG.blobClient != undefined )
+            {
+                JVG.blobClient.disconnectFromService();
+                JVG.blobClient = null;
+            }
+          }
+          
+          function send( packet ) {
+            JVG.blobClient.send( packet );
+          }
+
+          function setPauseScreen( screen ) {
+            
+          }
+        </script>
+</head>
+
+<body onload="onLoad()" style="background-color:#000000;">
+    <div id="fb-root"></div>
+
+    <div class="row">
+    	<!-- Flash Environment Load  width: 1008px; -->
+    	<div id="flashContent" style="float:none; margin: 0 auto;"> </div>
+    </div>
+    
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/swfobject.js"></script>
+    <script type="text/javascript" src="js/blobcastclient.js"></script>
+    <script type="text/javascript" src="js/socket.io.js"></script>
+    <script type="text/javascript" src="js/swfobject.js"></script>
+    <script type="text/javascript" src="js/GameApi-1.0.1.js"></script>
+    <script type="text/javascript" src="js/FlashBlobHandler.js"></script>
+  </body>
+</html>

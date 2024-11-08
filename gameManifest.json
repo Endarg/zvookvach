@@ -1,0 +1,21 @@
+{
+    "gameName": "The Jackbox Party Pack 2",
+    "mainSwf": "TJPPLoader.swf",
+    "pauseSwf": "PauseDialog.swf",
+    "managerSwf": "Manager.swf",
+    "fallbackSwf": "games/Picker/Picker.swf",
+    "pauseStyle": "channels",
+
+    "win":{
+        "sentryDsn": "https://6e76666eecfe1b11089413f9a9b013d0@o420318.ingest.us.sentry.io/4507351973888000"
+    },
+
+    "steam": {
+        "appId": 397460
+    },
+
+    "samsung":{
+        "ads":[
+        ]
+    }
+}
